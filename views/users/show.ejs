@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate')%>
+
+<h1> USER:</h1>
+
+<% rows.forEach((user) =>{%>
+<div class="card" mb-3>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card-body">
+                
+                <p class="card-text">
+                    <ul>
+                        <li><%= user.username %> </li>
+                        <li><%= user.email %> </li>
+                        <a href="<%=user.email%>/edit" class="btn btn-primary">Edit</a>
+                        
+                        <form action="<%=user.email%>/delete" method="POST">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                        
+                    </ul>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<% })%>
